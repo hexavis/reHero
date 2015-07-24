@@ -130,9 +130,29 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\femalelvl1.png" />
+    <Content Include="img\femalelvl2.png" />
+    <Content Include="img\femalelvl3.png" />
+    <Content Include="img\femalelvl4.png" />
+    <Content Include="img\femalelvl5.png" />
+    <Content Include="img\malelvl1.png" />
+    <Content Include="img\malelvl2.png" />
+    <Content Include="img\malelvl3.png" />
+    <Content Include="img\malelvl4.png" />
+    <Content Include="img\malelvl5.png" />
+    <Content Include="img\mon1.png" />
+    <Content Include="img\mon1Dead.png" />
+    <Content Include="img\mon2.png" />
+    <Content Include="img\mon2Dead.png" />
+    <Content Include="img\otherlvl1.png" />
+    <Content Include="img\otherlvl2.png" />
+    <Content Include="img\otherlvl3.png" />
+    <Content Include="img\otherlvl4.png" />
+    <Content Include="img\otherlvl5.png" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Register.aspx" />
@@ -153,6 +173,13 @@
     <Content Include="scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

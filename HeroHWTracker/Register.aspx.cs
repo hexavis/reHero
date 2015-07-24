@@ -57,7 +57,7 @@ namespace HeroHWTracker
                 }
 
 
-                Response.Redirect("~/Login.aspx");//change this to in progress page
+                Response.Redirect("~/Login.aspx");
          
             }
             else
