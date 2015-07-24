@@ -12,7 +12,7 @@
                     <div class="media-left media-middle">
                         <asp:Image class="media-object" ID="Hero" runat="server" width="100"/>                        
                     </div>
-                    <div class="media-body">
+                    <div class="media-body media-middle">
                         <!-- The experience bar -->
                         <div class="progress">
                              <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -20,12 +20,19 @@
                                         id="exp" runat="server">
                                  </div>
                         </div>
+                        <div>
+                            <asp:Label ID="expProgress" runat="server"></asp:Label>
+                        </div>
                     </div>
                 </div>
             </div>
             <asp:Label ID="message" runat="server"></asp:Label>
 
-            <asp:Image class="media-object" ID="hero2" runat="server" width="50"/> 
+            <!-- Exp well -->
+
+            <!-- Table thing here? -->
+
+
             <!-- The in progress homework will go here -->
             <!-- scroll bar: http://stackoverflow.com/questions/26281242/bootstrap-row-with-horizontal-scroll -->
 
