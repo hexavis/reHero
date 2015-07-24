@@ -22,6 +22,15 @@ namespace HeroHWTracker {
         protected global::System.Web.UI.WebControls.Image Hero;
         
         /// <summary>
+        /// exp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl exp;
+        
+        /// <summary>
         /// message control.
         /// </summary>
         /// <remarks>
