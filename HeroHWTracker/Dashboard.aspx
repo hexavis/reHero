@@ -10,7 +10,7 @@
                 <!-- The image of the hero -->
                 <div class="media">
                     <div class="media-left media-middle">
-                        <asp:Image class="media-object" ID="Hero" runat="server" width="50"/>                        
+                        <asp:Image class="media-object" ID="Hero" runat="server" width="100"/>                        
                     </div>
                     <div class="media-body">
                         <!-- The experience bar -->
@@ -24,7 +24,7 @@
             </div>
             <asp:Label ID="message" runat="server"></asp:Label>
 
-
+            <asp:Image class="media-object" ID="hero2" runat="server" width="50"/> 
             <!-- The in progress homework will go here -->
             <!-- scroll bar: http://stackoverflow.com/questions/26281242/bootstrap-row-with-horizontal-scroll -->
 
