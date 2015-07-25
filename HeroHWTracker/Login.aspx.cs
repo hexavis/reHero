@@ -40,7 +40,7 @@ namespace HeroHWTracker
                 var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
-                Response.Redirect("~/Dashboard.aspx");
+                Response.Redirect("~/HomeWork/Default.aspx");
             }
             else
             {
