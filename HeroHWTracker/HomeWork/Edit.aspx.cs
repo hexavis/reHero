@@ -16,6 +16,7 @@ namespace HeroHWTracker.HomeWork
     public partial class Edit : System.Web.UI.Page
     {
 		protected HeroHWTracker.Models.HeroEntities _db = new HeroHWTracker.Models.HeroEntities();
+        private static DateTime dueDate;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,6 +37,7 @@ namespace HeroHWTracker.HomeWork
             using (_db)
             {
                 var item = _db.HomeWork.Find(HomeWorkID);
+                item.Due_Date = dueDate;
 
                 if (item == null)
                 {
@@ -76,6 +78,12 @@ namespace HeroHWTracker.HomeWork
             {
                 Response.Redirect("../Default");
             }
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            dueDate = Calendar1.SelectedDate;
+            testDate.Text = Calendar1.SelectedDate.ToLongDateString();
         }
     }
 }

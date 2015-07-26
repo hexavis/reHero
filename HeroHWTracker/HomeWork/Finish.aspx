@@ -1,10 +1,8 @@
-﻿<%@ Page Title="HomeWorkEdit" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Edit.aspx.cs" Inherits="HeroHWTracker.HomeWork.Edit" %>
+﻿<%@ Page Title="HomeWorkEdit" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Finish.aspx.cs" Inherits="HeroHWTracker.HomeWork.Finish" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
+    <asp:Label runat="server" ID="pain"></asp:Label>
     <div>
 		<p>&nbsp;</p>
-        <p>Edit HomeWork</p>
-        <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
-        <asp:label runat="server" ID="testDate"></asp:label>
         <asp:FormView runat="server"
             ItemType="HeroHWTracker.Models.HomeWork" DefaultMode="Edit" DataKeyNames="HomeWorkID"
             UpdateMethod="UpdateItem" SelectMethod="GetItem"
@@ -14,23 +12,20 @@
             </EmptyDataTemplate>
             <EditItemTemplate>
                 <fieldset class="form-horizontal">
-                    <legend></legend>
-					<asp:ValidationSummary runat="server" CssClass="alert alert-danger"  />                 
-						    <asp:DynamicControl Mode="Edit" DataField="UserInfoID" runat="server" Visible="False"/>
-						    <asp:DynamicControl Mode="Edit" DataField="MonFilePath" runat="server" Visible="False"/>
-						    <asp:DynamicControl Mode="Edit" DataField="Name" runat="server" />
-						    <asp:DynamicControl Mode="Edit" DataField="Description" runat="server" />
-						    <asp:DynamicControl Mode="Edit" DataField="Class" runat="server" />
-						    <asp:DynamicControl Mode="Edit" DataField="isComplete" runat="server" Visible="False"/>
+                    <legend>Are you sure you have completed this Homework?</legend>
+					<asp:ValidationSummary runat="server" CssClass="alert alert-danger"  />              
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
 							<asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" />
 							<asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default" />
+                             
 						</div>
 					</div>
                 </fieldset>
             </EditItemTemplate>
         </asp:FormView>
     </div>
+
+   
 </asp:Content>
 

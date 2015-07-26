@@ -15,7 +15,7 @@ namespace HeroHWTracker.HomeWork
     public partial class Default : System.Web.UI.Page
     {
 		protected HeroHWTracker.Models.HeroEntities _db = new HeroHWTracker.Models.HeroEntities();
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!HttpContext.Current.User.Identity.IsAuthenticated)
@@ -76,6 +76,11 @@ namespace HeroHWTracker.HomeWork
         {
 
             Response.Redirect("~/HomeWork/Complete.aspx");
+        }
+
+        protected void CompleteHW_Click(object sender, EventArgs e, int HWID)
+        {
+           
         }
 
 

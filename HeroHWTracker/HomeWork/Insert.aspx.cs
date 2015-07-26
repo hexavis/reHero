@@ -17,6 +17,7 @@ namespace HeroHWTracker.HomeWork
 		protected HeroHWTracker.Models.HeroEntities _db = new HeroHWTracker.Models.HeroEntities();
         public static Boolean gotExpIn = false;
         public const int MAX_MONSTERS = 3, ADD_HW_Exp = 15;
+        private static DateTime dueDate;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,11 +38,9 @@ namespace HeroHWTracker.HomeWork
             using (_db)
             {
                 
-                var item = new HeroHWTracker.Models.HomeWork();
-
-                
+                var item = new HeroHWTracker.Models.HomeWork();                
                 int isComplete = 0;
-
+                item.Due_Date = dueDate;
                 
 
                 //get the user info id
@@ -149,12 +148,20 @@ namespace HeroHWTracker.HomeWork
             }
         }
 
+
+
         protected void ItemCommand(object sender, FormViewCommandEventArgs e)
         {
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
                 Response.Redirect("Default");
             }
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            dueDate = Calendar1.SelectedDate;
+            testDate.Text = Calendar1.SelectedDate.ToLongDateString();
         }
     }
 }

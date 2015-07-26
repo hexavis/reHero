@@ -103,7 +103,7 @@ namespace HeroHWTracker
                     }
 
                     //Tell them they got more exp and level if necessary
-                    if (HomeWork.Insert.gotExpIn == true)
+                    if (HomeWork.Insert.gotExpIn == true || HomeWork.Finish.gotExpCom == true)
                     {
                         //Check to see if you leveled up.
                         if (currExp > expNeeded)
@@ -130,13 +130,15 @@ namespace HeroHWTracker
                                 conn.Close();
                             }
 
+                            showLevelUp.Text = "Congratulations! You have leveled up~!";
                         }
 
 
                         //show well and exp you gained
                         ExpWell.Visible = true;
-                        showExp.Text = HomeWork.Insert.ADD_HW_Exp.ToString();
+                        showExp.Text = "You have gained " + HomeWork.Insert.ADD_HW_Exp.ToString() + " experience~!";
                         HomeWork.Insert.gotExpIn = false;
+                        HomeWork.Finish.gotExpCom = false;
 
                     }
                     else
@@ -210,9 +212,6 @@ namespace HeroHWTracker
                 SetTheProgress(exp, progress + "%");
                 expProgress.Text = currExp.ToString() + "/" + expNeeded.ToString();
 
-
-              
-                
             }
         }
 

@@ -141,6 +141,7 @@
     <Content Include="HomeWork\Default.aspx" />
     <Content Include="HomeWork\Delete.aspx" />
     <Content Include="HomeWork\Details.aspx" />
+    <Content Include="HomeWork\Finish.aspx" />
     <Content Include="HomeWork\Edit.aspx" />
     <Content Include="HomeWork\Insert.aspx" />
     <Content Include="packages.config" />
@@ -391,6 +392,13 @@
     </Compile>
     <Compile Include="HomeWork\Details.aspx.designer.cs">
       <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeWork\Finish.aspx.cs">
+      <DependentUpon>Finish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeWork\Finish.aspx.designer.cs">
+      <DependentUpon>Finish.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomeWork\Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
