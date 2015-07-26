@@ -31,10 +31,10 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>MonsterID</strong>
+									<strong>MonFilePath</strong>
 								</div>
 								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="MonsterID" ID="MonsterID" Mode="ReadOnly" />
+									<asp:DynamicControl runat="server" DataField="MonFilePath" ID="MonFilePath" Mode="ReadOnly" />
 								</div>
 							</div>
 							<div class="row">

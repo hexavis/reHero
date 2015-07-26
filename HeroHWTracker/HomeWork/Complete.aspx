@@ -1,4 +1,4 @@
-﻿<%@ Page Title="HomeWorkList" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Default.aspx.cs" Inherits="HeroHWTracker.HomeWork.Default" %>
+﻿<%@ Page Title="HomeWorkList" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Complete.aspx.cs" Inherits="HeroHWTracker.HomeWork.Complete" AutoEventWireup="True" %>
 <%@ Register TagPrefix="FriendlyUrls" Namespace="Microsoft.AspNet.FriendlyUrls" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <h2>HomeWork List</h2>
@@ -91,7 +91,7 @@
             </ItemTemplate>
         </asp:ListView>
 
-        <asp:Button runat="server" ID="CompleteB" Text="Complete" OnClick="CompleteB_Click" />
+        <asp:Button runat="server" ID="InProgressB" Text="In Progress" OnClick="CompleteB_Click" />
     </div>
 </asp:Content>
 

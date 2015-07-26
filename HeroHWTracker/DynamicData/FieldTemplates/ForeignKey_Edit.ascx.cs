@@ -11,7 +11,7 @@ using HeroHWTracker.Models;
 namespace HeroHWTracker {
     public partial class ForeignKey_EditField : System.Web.DynamicData.FieldTemplateUserControl {
 
-		protected HeroHWTracker.Models.HeroEntities1 _db = new HeroHWTracker.Models.HeroEntities1();
+		protected HeroHWTracker.Models.HeroEntities _db = new HeroHWTracker.Models.HeroEntities();
 
 		public string DataTypeName { get; set; }
 

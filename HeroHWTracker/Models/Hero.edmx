@@ -89,7 +89,7 @@
           </Key>
           <Property Name="HomeWorkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserInfoID" Type="int" Nullable="false" />
-          <Property Name="MonsterID" Type="int" Nullable="false" />
+          <Property Name="MonFilePath" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="varchar(max)" Nullable="false" />
           <Property Name="Class" Type="varchar" MaxLength="50" Nullable="false" />
@@ -287,7 +287,7 @@
           </Key>
           <Property Name="HomeWorkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserInfoID" Type="Int32" Nullable="false" />
-          <Property Name="MonsterID" Type="Int32" Nullable="false" />
+          <Property Name="MonFilePath" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -345,7 +345,7 @@
           <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
           <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="HeroEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HeroEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
@@ -374,7 +374,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HeroModelStoreContainer" CdmEntityContainer="HeroEntities1">
+        <EntityContainerMapping StorageEntityContainer="HeroModelStoreContainer" CdmEntityContainer="HeroEntities">
           <EntitySetMapping Name="C__MigrationHistory">
             <EntityTypeMapping TypeName="HeroModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">
@@ -454,7 +454,7 @@
               <MappingFragment StoreEntitySet="HomeWork">
                 <ScalarProperty Name="HomeWorkID" ColumnName="HomeWorkID" />
                 <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
-                <ScalarProperty Name="MonsterID" ColumnName="MonsterID" />
+                <ScalarProperty Name="MonFilePath" ColumnName="MonFilePath" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Class" ColumnName="Class" />

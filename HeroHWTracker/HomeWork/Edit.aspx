@@ -14,7 +14,7 @@
                     <legend>Edit HomeWork</legend>
 					<asp:ValidationSummary runat="server" CssClass="alert alert-danger"  />                 
 						    <asp:DynamicControl Mode="Edit" DataField="UserInfoID" runat="server" />
-						    <asp:DynamicControl Mode="Edit" DataField="MonsterID" runat="server" />
+						    <asp:DynamicControl Mode="Edit" DataField="MonFilePath" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Name" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Description" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Class" runat="server" />

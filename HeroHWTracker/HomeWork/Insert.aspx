@@ -10,10 +10,13 @@
                 <fieldset class="form-horizontal">
 				<legend>Insert HomeWork</legend>
 		        <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
+						    <asp:DynamicControl Mode="Insert" DataField="UserInfoID" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="MonFilePath" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Name" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Description" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Class" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Due_Date" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="isComplete" runat="server" />
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <asp:Button runat="server" ID="InsertButton" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />

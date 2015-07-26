@@ -16,7 +16,7 @@ namespace HeroHWTracker.Models
     {
         public int HomeWorkID { get; set; }
         public int UserInfoID { get; set; }
-        public int MonsterID { get; set; }
+        public string MonFilePath { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Class { get; set; }

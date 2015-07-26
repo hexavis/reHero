@@ -13,10 +13,10 @@ namespace HeroHWTracker.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HeroEntities1 : DbContext
+    public partial class HeroEntities : DbContext
     {
-        public HeroEntities1()
-            : base("name=HeroEntities1")
+        public HeroEntities()
+            : base("name=HeroEntities")
         {
         }
     

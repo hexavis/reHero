@@ -8,19 +8,26 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using HeroHWTracker.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 
 namespace HeroHWTracker.HomeWork
 {
     public partial class Details : System.Web.UI.Page
     {
-		protected HeroHWTracker.Models.HeroEntities1 _db = new HeroHWTracker.Models.HeroEntities1();
+		protected HeroHWTracker.Models.HeroEntities _db = new HeroHWTracker.Models.HeroEntities();
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        protected void Page_Load(object sender, EventArgs e){
             if (!HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/login.aspx");
             }
+            else
+            {
+
+            }
+        
         }
 
         // This is the Select methd to selects a single HomeWork item with the id
