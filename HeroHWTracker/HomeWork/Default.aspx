@@ -18,10 +18,10 @@
                     <thead>
                         <tr>
                             <th>
-								<asp:LinkButton Text="HomeWorkID" CommandName="Sort" CommandArgument="HomeWorkID" runat="Server" />
+								<asp:LinkButton Text="HomeWorkID" CommandName="Sort" CommandArgument="HomeWorkID" runat="Server" Visible="False" />
 							</th>
                             <th>
-								<asp:LinkButton Text="UserInfoID" CommandName="Sort" CommandArgument="UserInfoID" runat="Server" />
+								<asp:LinkButton Text="UserInfoID" CommandName="Sort" CommandArgument="UserInfoID" runat="Server" Visible="False"/>
 							</th>
                             <th>
 								<asp:LinkButton Text="MonFilePath" CommandName="Sort" CommandArgument="MonFilePath" runat="Server" />
@@ -36,10 +36,10 @@
 								<asp:LinkButton Text="Class" CommandName="Sort" CommandArgument="Class" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="Due_Date" CommandName="Sort" CommandArgument="Due_Date" runat="Server" />
+								<asp:LinkButton Text="Due Date" CommandName="Sort" CommandArgument="Due_Date" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="isComplete" CommandName="Sort" CommandArgument="isComplete" runat="Server" />
+								<asp:LinkButton Text="isComplete" CommandName="Sort" CommandArgument="isComplete" runat="Server" Visible="False"/>
 							</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -59,10 +59,10 @@
             <ItemTemplate>
                 <tr>
 							<td>
-								<asp:DynamicControl runat="server" DataField="HomeWorkID" ID="HomeWorkID" Mode="ReadOnly" />
+								<asp:DynamicControl runat="server" DataField="HomeWorkID" ID="HomeWorkID" Mode="ReadOnly" Visible="False"/>
 							</td>
 							<td>
-								<asp:DynamicControl runat="server" DataField="UserInfoID" ID="UserInfoID" Mode="ReadOnly" />
+								<asp:DynamicControl runat="server" DataField="UserInfoID" ID="UserInfoID" Mode="ReadOnly" Visible="False"/>
 							</td>
 							<td>
 								<asp:DynamicControl runat="server" DataField="MonFilePath" ID="MonFilePath" Mode="ReadOnly" />
@@ -80,7 +80,7 @@
 								<asp:DynamicControl runat="server" DataField="Due_Date" ID="Due_Date" Mode="ReadOnly" />
 							</td>
 							<td>
-								<asp:DynamicControl runat="server" DataField="isComplete" ID="isComplete" Mode="ReadOnly" />
+								<asp:DynamicControl runat="server" DataField="isComplete" ID="isComplete" Mode="ReadOnly" Visible="False" />
 							</td>
                     <td>
 					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/HomeWork/Details", Item.HomeWorkID) %>' Text="Details" /> | 

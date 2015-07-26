@@ -14,6 +14,8 @@ namespace HeroHWTracker
 {
     public partial class Default : System.Web.UI.MasterPage
     {
+        
+  
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!HttpContext.Current.User.Identity.IsAuthenticated)
@@ -76,6 +78,71 @@ namespace HeroHWTracker
                         conn.Close();
                     }
 
+                    //grab the experience needed for current level for level up check
+                    SqlCommand grabExp = new SqlCommand("SELECT * FROM [EXP] where [Level]=@level", conn);
+                    grabExp.Parameters.AddWithValue("@level", currLevel + 1);
+
+                    try
+                    {
+                        conn.Open();
+                        //open and read the information in the database
+                        using (SqlDataReader reader = grabExp.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                expNeeded = (int)reader["expNeededToGetLevel"];
+
+                            }
+                        }
+                        conn.Close();
+                    }
+                    catch (Exception ex3)
+                    {
+                        message.Text = "Hero Error: " + ex3.Message;
+                        conn.Close();
+                    }
+
+                    //Tell them they got more exp and level if necessary
+                    if (HomeWork.Insert.gotExpIn == true)
+                    {
+                        //Check to see if you leveled up.
+                        if (currExp > expNeeded)
+                        {
+                            //tell them they leveled up ==============================================
+                            currLevel += 1;
+
+                            //subtract 
+                            currExp = currExp - expNeeded;
+
+                            //update curr exp
+                            SqlCommand update = new SqlCommand("UPDATE [UserInfo] SET [currExp]=@currExp, [Level]=@level WHERE [username]=@name", conn);
+                            update.Parameters.AddWithValue("@currExp", currExp);
+                            update.Parameters.AddWithValue("@Level", currLevel);
+                            update.Parameters.AddWithValue("@name", HttpContext.Current.User.Identity.GetUserName());
+                            try
+                            {
+                                conn.Open();
+                                update.ExecuteNonQuery();
+                                conn.Close();
+                            }
+                            catch (Exception ex)
+                            {
+                                conn.Close();
+                            }
+
+                        }
+
+
+                        //show well and exp you gained
+                        ExpWell.Visible = true;
+                        showExp.Text = HomeWork.Insert.ADD_HW_Exp.ToString();
+                        HomeWork.Insert.gotExpIn = false;
+
+                    }
+                    else
+                    {
+                        ExpWell.Visible = false;
+                    }
 
                     //grab Hero Image
                     SqlCommand grabHero = new SqlCommand("SELECT * FROM [Hero] where [Gender]=@gender and [Level]=@level", conn);
@@ -105,18 +172,19 @@ namespace HeroHWTracker
                         conn.Close();
                     }
 
+
                     //grab Exp Info if person is less than max level
                     if (currLevel < MAX_LEVEL)
                     {
 
-                        SqlCommand grabExp = new SqlCommand("SELECT * FROM [EXP] where [Level]=@level", conn);
-                        grabExp.Parameters.AddWithValue("@level", currLevel + 1);
+                        SqlCommand grabExp2 = new SqlCommand("SELECT * FROM [EXP] where [Level]=@level", conn);
+                        grabExp2.Parameters.AddWithValue("@level", currLevel + 1);
 
                         try
                         {
                             conn.Open();
                             //open and read the information in the database
-                            using (SqlDataReader reader = grabExp.ExecuteReader())
+                            using (SqlDataReader reader = grabExp2.ExecuteReader())
                             {
                                 while (reader.Read())
                                 {
@@ -142,6 +210,9 @@ namespace HeroHWTracker
                 SetTheProgress(exp, progress + "%");
                 expProgress.Text = currExp.ToString() + "/" + expNeeded.ToString();
 
+
+              
+                
             }
         }
 

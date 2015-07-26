@@ -94,6 +94,24 @@ namespace HeroHWTracker {
         protected global::System.Web.UI.WebControls.Label message;
         
         /// <summary>
+        /// ExpWell control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder ExpWell;
+        
+        /// <summary>
+        /// showExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label showExp;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

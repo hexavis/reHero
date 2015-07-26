@@ -15,6 +15,8 @@ namespace HeroHWTracker.HomeWork
     public partial class Insert : System.Web.UI.Page
     {
 		protected HeroHWTracker.Models.HeroEntities _db = new HeroHWTracker.Models.HeroEntities();
+        public static Boolean gotExpIn = false;
+        public const int MAX_MONSTERS = 3, ADD_HW_Exp = 15;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,16 +36,18 @@ namespace HeroHWTracker.HomeWork
         {
             using (_db)
             {
+                
                 var item = new HeroHWTracker.Models.HomeWork();
 
-                const int MAX_MONSTERS = 2;
+                
+                int isComplete = 0;
 
-                //set default to not complete
-                item.isComplete = 0;
+                
 
                 //get the user info id
                 string currentUser = HttpContext.Current.User.Identity.GetUserName();
                 int userInfoID = 0;
+                int currExp = 0;
                 //make a connection to the database
                 string cs = "Data Source=pbc2o8qyql.database.windows.net;Initial Catalog=Hero;User ID=apple;Password=skull!1223;Trusted_Connection=False;Encrypt=True;";
                 SqlConnection conn = new SqlConnection(cs);
@@ -61,7 +65,7 @@ namespace HeroHWTracker.HomeWork
                         while (reader.Read())
                         {
                             userInfoID = (int)reader["UserInfoID"];
-
+                            currExp = (int)reader["currExp"];
                         }
 
                     }
@@ -73,13 +77,11 @@ namespace HeroHWTracker.HomeWork
                 }
 
 
-                item.UserInfoID = userInfoID;
+                
 
                 //pick a random monster
                 Random rnd = new Random();
-                int numMon = rnd.Next(1, MAX_MONSTERS + 1); // creates a number 1 and # of monsters
-
-
+                int numMon = rnd.Next(2, MAX_MONSTERS + 1); // creates a number 1 and # of monsters
 
                 //grab hero level, gender and exp
                 SqlCommand mon = new SqlCommand("SELECT * FROM [Monster] where [MonsterID]=@ID", conn);
@@ -89,7 +91,7 @@ namespace HeroHWTracker.HomeWork
                 {
                     conn.Open();
                     //open and read the information in the database
-                    using (SqlDataReader reader = check.ExecuteReader())
+                    using (SqlDataReader reader = mon.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -104,15 +106,43 @@ namespace HeroHWTracker.HomeWork
                 {
                     conn.Close();
                 }
+
                 item.MonFilePath = filePath;
+
+                //set default to not complete
+                item.isComplete = isComplete;
+                item.UserInfoID = userInfoID;
 
                 TryUpdateModel(item);
 
+
+
+
                 if (ModelState.IsValid)
                 {
+                     //add experience
+                    //insert into database.
+                    int newExp = currExp + ADD_HW_Exp;
+                    SqlCommand update = new SqlCommand("UPDATE [UserInfo] SET [currExp]=@currExp WHERE [username]=@name", conn);
+                    update.Parameters.AddWithValue("@currExp", newExp);
+                    update.Parameters.AddWithValue("@name", HttpContext.Current.User.Identity.GetUserName());
+                    try
+                    {
+                        conn.Open();
+                        gotExpIn = true;
+                        update.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                    }
+                
                     // Save changes
                     _db.HomeWork.Add(item);
                     _db.SaveChanges();
+
+                  
 
                     Response.Redirect("Default");
                 }

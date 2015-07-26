@@ -13,22 +13,8 @@
             <ItemTemplate>
                 <fieldset class="form-horizontal">
                     <legend>Delete HomeWork</legend>
-							<div class="row">
-								<div class="col-sm-2 text-right">
-									<strong>HomeWorkID</strong>
-								</div>
-								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="HomeWorkID" ID="HomeWorkID" Mode="ReadOnly" />
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-2 text-right">
-									<strong>UserInfoID</strong>
-								</div>
-								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="UserInfoID" ID="UserInfoID" Mode="ReadOnly" />
-								</div>
-							</div>
+						
+							
 							<div class="row">
 								<div class="col-sm-2 text-right">
 									<strong>MonFilePath</strong>
@@ -63,18 +49,10 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>Due_Date</strong>
+									<strong>Due Date</strong>
 								</div>
 								<div class="col-sm-4">
 									<asp:DynamicControl runat="server" DataField="Due_Date" ID="Due_Date" Mode="ReadOnly" />
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-2 text-right">
-									<strong>isComplete</strong>
-								</div>
-								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="isComplete" ID="isComplete" Mode="ReadOnly" />
 								</div>
 							</div>
                  	<div class="row">
