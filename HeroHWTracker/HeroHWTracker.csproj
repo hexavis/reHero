@@ -144,6 +144,9 @@
     <Content Include="HomeWork\Finish.aspx" />
     <Content Include="HomeWork\Edit.aspx" />
     <Content Include="HomeWork\Insert.aspx" />
+    <Content Include="img\notebook.png" />
+    <Content Include="img\small_steps.png" />
+    <Content Include="img\small_stepsB.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="Default.Master" />

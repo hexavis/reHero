@@ -1,37 +1,21 @@
-﻿
-html {
-  height: 100%;
-
-}
-html body {
-  height: 100%;
-  overflow: hidden;
-}
-html body .container-fluid.body-content {
-  position: absolute;
-  top: 50px;
-  bottom: 100px;
-  right: 0;
-  left: 0;
-  overflow-y: auto;
-}
-header {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    background-color: #4C4;
-    height: 50px;
-}
-footer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #4C4;
-    height: 30px;
+﻿    html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
 }
 
-.bottomSpace{
-    height: 500px;
+#body {
+   padding:20px;
+   padding-bottom:80px;   /* Height of the footer */
+   float:left;
+   overflow:auto;
+}
+
+#sections{
+    padding: -10px;
+}
+
+#table{
+    padding: -10px;
 }
