@@ -35,10 +35,14 @@ namespace HeroHWTracker.HomeWork
             return _db.HomeWork;
         }
 
+        
+
          public IQueryable<HeroHWTracker.Models.HomeWork> Index()
     {
-             //Grab the hero image, exp and homework in progress and get them ready.
-                    string currentUser = HttpContext.Current.User.Identity.GetUserName();
+           
+
+            //Grab the hero image, exp and homework in progress and get them ready.
+            string currentUser = HttpContext.Current.User.Identity.GetUserName();
             int userInfoID = 0;
 
             //make a connection to the database

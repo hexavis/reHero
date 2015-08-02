@@ -65,7 +65,9 @@
 								<asp:DynamicControl runat="server" DataField="UserInfoID" ID="UserInfoID" Mode="ReadOnly" Visible="False"/>
 							</td>
 							<td>
-								<asp:DynamicControl runat="server" DataField="MonFilePath" ID="MonFilePath" Mode="ReadOnly" />
+                                <!-- Show the image -->
+                                 <asp:Image ID='Image1' runat='server' ImageUrl='<%# "~/" + Eval("MonFilePath") %>' />
+								<asp:DynamicControl runat="server" DataField="MonFilePath" ID="MonFilePath" Mode="ReadOnly" Visible="false" />
 							</td>
 							<td>
 								<asp:DynamicControl runat="server" DataField="Name" ID="Name" Mode="ReadOnly" />
