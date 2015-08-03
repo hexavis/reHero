@@ -1,4 +1,4 @@
-﻿<%@ Page Title="HomeWorkList" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Complete.aspx.cs" Inherits="HeroHWTracker.HomeWork.Complete" AutoEventWireup="True" %>
+﻿<%@ Page Title="Completed Homework" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Complete.aspx.cs" Inherits="HeroHWTracker.HomeWork.Complete" AutoEventWireup="True" %>
 
 <%@ Register TagPrefix="FriendlyUrls" Namespace="Microsoft.AspNet.FriendlyUrls" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="HomeWorkEdit" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Finish.aspx.cs" Inherits="HeroHWTracker.HomeWork.Finish" %>
+﻿<%@ Page Title="Finish HomeWork" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Finish.aspx.cs" Inherits="HeroHWTracker.HomeWork.Finish" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <asp:Label runat="server" ID="pain"></asp:Label>

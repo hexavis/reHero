@@ -1,4 +1,4 @@
-﻿<%@ Page Title="HomeWorkDelete" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Delete.aspx.cs" Inherits="HeroHWTracker.HomeWork.Delete" %>
+﻿<%@ Page Title="Delete HomeWork" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Delete.aspx.cs" Inherits="HeroHWTracker.HomeWork.Delete" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <asp:Panel ID="reqId" runat="server" HorizontalAlign="center">

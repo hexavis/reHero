@@ -1,4 +1,4 @@
-﻿<%@ Page Title="HomeWorkEdit" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Edit.aspx.cs" Inherits="HeroHWTracker.HomeWork.Edit" %>
+﻿<%@ Page Title="Edit HomeWork" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Edit.aspx.cs" Inherits="HeroHWTracker.HomeWork.Edit" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <asp:Panel id="reqId" runat="server" HorizontalAlign="center" >

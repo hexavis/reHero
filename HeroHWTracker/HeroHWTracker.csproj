@@ -119,6 +119,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Error404.aspx" />
     <Content Include="img\herologo.png" />
     <Content Include="img\herologoSM.png" />
     <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
@@ -368,6 +369,13 @@
     <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
       <DependentUpon>Url_Edit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -420,6 +428,7 @@
     <Compile Include="HomeWork\Insert.aspx.designer.cs">
       <DependentUpon>Insert.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logic\ExceptionUtility.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

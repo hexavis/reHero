@@ -1,4 +1,4 @@
-﻿<%@ Page Title="HomeWorkInsert" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Insert.aspx.cs" Inherits="HeroHWTracker.HomeWork.Insert" AutoEventWireup="True" %>
+﻿<%@ Page Title="Insert New HomeWork" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Insert.aspx.cs" Inherits="HeroHWTracker.HomeWork.Insert" AutoEventWireup="True" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <asp:Panel ID="reqId" runat="server" HorizontalAlign="center">
