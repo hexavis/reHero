@@ -9,6 +9,7 @@ using HeroHWTracker.Models;
 using System.Data.SqlClient;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.FriendlyUrls;
 
 namespace HeroHWTracker.HomeWork
 {
@@ -82,10 +83,6 @@ namespace HeroHWTracker.HomeWork
             Response.Redirect("~/HomeWork/Complete.aspx");
         }
 
-        protected void CompleteHW_Click(object sender, EventArgs e, int HWID)
-        {
-           
-        }
 
 
     }

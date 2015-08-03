@@ -40,10 +40,42 @@ namespace HeroHWTracker.HomeWork
             string cs = "Data Source=pbc2o8qyql.database.windows.net;Initial Catalog=Hero;User ID=apple;Password=skull!1223;Trusted_Connection=False;Encrypt=True;";
             SqlConnection conn = new SqlConnection(cs);
 
-            SqlCommand update = new SqlCommand("UPDATE [HomeWork] SET [isComplete]=@isCom WHERE [HomeWorkID]=@ID", conn);
+            var item = _db.HomeWork.Find(HomeWorkID);
+            string currMonFP = item.MonFilePath;
+            string newMonFP = "";
+
+            //find and change monster file path
+            SqlCommand mon = new SqlCommand("SELECT * FROM [Monster] where [imageFilePathAlive]=@file", conn);
+            mon.Parameters.AddWithValue("@file", currMonFP);
+
+            try
+            {
+                conn.Open();
+                //open and read the information in the database
+                using (SqlDataReader reader = mon.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        newMonFP = reader["imageFilePathDead"].ToString();
+
+                    }
+
+                }
+                conn.Close();
+            }
+            catch (Exception ex1)
+            {
+                message.Text = ex1.ToString();
+                conn.Close();
+            }
+
+            Label1.Text = newMonFP;
+            SqlCommand update = new SqlCommand("UPDATE [HomeWork] SET [isComplete]=@isCom, [MonFilePath]=@filePath WHERE [HomeWorkID]=@ID", conn);
             update.Parameters.AddWithValue("@isCom", 1);
+            update.Parameters.AddWithValue("@filePath", newMonFP);
             update.Parameters.AddWithValue("@ID", HomeWorkID);
 
+            //This is for the experience
             try
             {
                 conn.Open();
@@ -65,6 +97,7 @@ namespace HeroHWTracker.HomeWork
                         while (reader.Read())
                         {
                             currExp = (int)reader["currExp"];
+                           
                         }
 
                     }
@@ -72,6 +105,7 @@ namespace HeroHWTracker.HomeWork
                 }
                 catch (Exception ex1)
                 {
+                    message.Text = "exp grab " + ex1.ToString();
                     conn.Close();
                 }
 
@@ -98,6 +132,7 @@ namespace HeroHWTracker.HomeWork
             }
             catch (Exception ex)
             {
+                message.Text = "Update hw " + ex.ToString();
                 conn.Close();
             }
 

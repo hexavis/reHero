@@ -32,6 +32,8 @@
                 </div>
             </div>
         </div>
+        <asp:Label runat="server" ID="Label1"></asp:Label>
+        <asp:Label runat="server" ID="message"></asp:Label>
     </asp:Panel>
 </asp:Content>
 
