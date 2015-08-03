@@ -6,6 +6,7 @@
         <div class="container-fluid">
             <div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 main">
                 <h2>HomeWork List</h2>
+                <p>&nbsp;</p>
                 <p>
                     <asp:Button runat="server" ID="InProgressB" Text="In Progress List" OnClick="CompleteB_Click" />
                 </p>

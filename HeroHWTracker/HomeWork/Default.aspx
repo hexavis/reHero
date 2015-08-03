@@ -6,8 +6,10 @@
         <div class="container-fluid">
             <div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 main">
                 <h2>HomeWork List</h2>
+                <p>&nbsp;</p>
                 <p>
                     <asp:HyperLink CssClass="HyperButton" runat="server" NavigateUrl="Insert" Text="Create new" />
+                       |   
                     <asp:Button runat="server" ID="CompleteB" Text="Complete List" OnClick="CompleteB_Click" />
                 </p>
             </div>

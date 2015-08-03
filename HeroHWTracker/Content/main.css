@@ -5,20 +5,33 @@
 body {
    margin:0;
    padding:0;
+   padding-top: 70px;
    padding-bottom: 50px;
    height:100%;
 
 }
 
-h1, h2{
+p{
+    font-family: 'Philosopher',  sans-serif;
+}
+
+h1{
     font-family: 'Philosopher',  sans-serif;
     margin: 0 auto;
     float: none;
 }
 
+h2{
+    font-family: 'Philosopher',  sans-serif;
+    margin: 0 auto;
+    float: none;
+    font-size: 50px;
+}
+
 
 #body {
    padding:20px;
+   padding-top: 100px;
    padding-bottom:80px;   /* Height of the footer */
    float:left;
    overflow:auto;
@@ -29,8 +42,8 @@ h1, h2{
 }
 
 .MainContent{
-    background-image: url('../img/j0Bee17.jpg');
-   background-repeat: repeat;
+   margin-top: 70px;
+    margin-bottom: 70px;
 }
 
 .col-centered{
@@ -58,4 +71,8 @@ h1, h2{
 
 .HyperButton:hover{
   text-decoration: none;
+}
+
+.navbar-brand{
+    padding-top: 5px;
 }
