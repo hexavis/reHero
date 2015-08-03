@@ -1,9 +1,21 @@
-﻿    html,
+﻿html{
+    }
+
+
 body {
    margin:0;
    padding:0;
+   padding-bottom: 50px;
    height:100%;
+
 }
+
+h1, h2{
+    font-family: 'Philosopher',  sans-serif;
+    margin: 0 auto;
+    float: none;
+}
+
 
 #body {
    padding:20px;
@@ -12,10 +24,16 @@ body {
    overflow:auto;
 }
 
-#sections{
+#table {
     padding: -10px;
 }
 
-#table{
-    padding: -10px;
+.MainContent{
+    background-image: url('../img/j0Bee17.jpg');
+   background-repeat: repeat;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }

@@ -14,10 +14,11 @@ namespace HeroHWTracker
 {
     public partial class Default : System.Web.UI.MasterPage
     {
-        
-  
+
+        public string imgPath = System.Web.VirtualPathUtility.ToAbsolute("~/img/notebook.png");
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 PrivateNav.Visible = false;
@@ -218,6 +219,11 @@ namespace HeroHWTracker
         void SetTheProgress(HtmlGenericControl bar, string value)
         {
             bar.Attributes.Add("style", string.Format("width:{0};", value));
+        }
+
+        protected void wellB_Click(object sender, EventArgs e)
+        {
+            ExpWell.Visible = false;
         }
 
     }
