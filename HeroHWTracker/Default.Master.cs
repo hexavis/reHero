@@ -131,7 +131,8 @@ namespace HeroHWTracker
                                 conn.Close();
                             }
 
-                            showLevelUp.Text = "Congratulations! You have leveled up~!";
+                            ModalPopupExtender1.Show();
+                            showLevelUp.Text = "Congratulations! You are now level " + currLevel +"!";
                         }
 
 

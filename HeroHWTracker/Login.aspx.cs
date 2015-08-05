@@ -20,6 +20,7 @@ namespace HeroHWTracker
                 {
                     StatusText.Text = string.Format("Hello {0}!!", User.Identity.GetUserName());
                     LoginStatus.Visible = true;
+                    Response.Redirect("~/HomeWork/Default.aspx");
                 }
                 else
                 {

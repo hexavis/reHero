@@ -11,6 +11,14 @@ namespace HeroHWTracker
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                
+            }
+            else
+            {
+                Response.Redirect("~/HomeWork/Default.aspx");
+            }
 
         }
 

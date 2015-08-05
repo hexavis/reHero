@@ -21,7 +21,7 @@ namespace HeroHWTracker
             if (exc is HttpUnhandledException)
             {
                 // Pass the error on to the error page.
-                Server.Transfer("Error404.aspx?handler=Application_Error%20-%20Global.asax", true);
+                Server.Transfer("404.aspx?handler=Application_Error%20-%20Global.asax", true);
             }
         }
     }

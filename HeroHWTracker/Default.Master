@@ -22,6 +22,10 @@
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <!-- -->
     <link href="~/Content/main.css" rel="stylesheet" type="text/css" media="screen" runat="server" />
+    <!-- JavaScript Section -->
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="scripts/ai.0.15.0-build32981.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -91,6 +95,7 @@
                         </div>
                     </nav>
 
+
                     <!-- Show the Hero and the experience points here -->
                     <div class="container-fluid">
                         <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 main">
@@ -111,6 +116,7 @@
                                             </div>
                                         </div>
                                         <div>
+                                            Exp:
                                             <asp:Label ID="expProgress" runat="server"></asp:Label>
                                         </div>
                                     </div>
@@ -118,16 +124,61 @@
                             </div>
                             <asp:Label ID="message" runat="server"></asp:Label>
 
-                            <asp:PlaceHolder ID="ExpWell" runat="server">
-                                <!-- Exp well -->
-                                <div class="well">
+                            <!-- Show that they leveled up~! -->
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
+                            <asp:LinkButton ID="LinkButton1" runat="server"></asp:LinkButton>
+                            <div>
 
-                                    <asp:Label runat="server" ID="showExp"></asp:Label>
-                                    <p>&nbsp;</p>
-                                    <asp:Label runat="server" ID="showLevelUp"></asp:Label>
-                                    <div class="media-right">
+                                <asp:Panel ID="Panel1" runat="server" class="modalPopup" Width="400px" Height="475px">
+                                    <div align="center">
+                                        <p>
+                                            <asp:Label ID="showLevelUp" runat="server"></asp:Label>
+                                        </p>
+                                        <img alt="Brand" src="<%=ResolveClientUrl("~/img/levelup.png")%>">
+                                        <p>&nbsp;</p>
+                                        <asp:Button ID="OkButton" runat="server" Text="OK" />
+                                    </div>
+                                </asp:Panel>
+                                <br />
+
+                                <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server"
+                                    TargetControlID="LinkButton1"
+                                    PopupControlID="Panel1"
+                                    BackgroundCssClass="modalBackground"
+                                    DropShadow="true"
+                                    OkControlID="OkButton"
+                                    OnOkScript="onOk()" />
+                            </div>
+
+                            <!-- Woudln't find the info in the main.css for some reason -->
+                            <style type="text/css">
+                                .modalBackground {
+                                    background-color: gray;
+                                    filter: alpha(opacity=70);
+                                    opacity: 0.7;
+                                }
+
+                                .modalPopup {
+                                    background-color: lightgray;
+                                    border-width: 2px;
+                                    border-style: solid;
+                                    border-color: black;
+                                    padding: 3px;
+                                    width: 250px;
+                                }
+                            </style>
+
+                            <!-- You got Exp well -->
+                            <asp:PlaceHolder ID="ExpWell" runat="server">
+                                <div class="well">
+                                    <div class="col-md-11">
+                                        <asp:Label runat="server" ID="showExp"></asp:Label>
+                                    </div>
+                                    <div class="col-md-1">
                                         <asp:Button runat="server" ID="wellB" OnClick="wellB_Click" Text="X" />
                                     </div>
+                                    <p>&nbsp;</p>
                                 </div>
                             </asp:PlaceHolder>
                         </div>
@@ -153,10 +204,7 @@
         </div>
     </nav>
 
-    <!-- JavaScript Section -->
-    <script src="Scripts/jquery-2.1.4.min.js"></script>
-    <script src="scripts/ai.0.15.0-build32981.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
+
 
 </body>
 </html>
