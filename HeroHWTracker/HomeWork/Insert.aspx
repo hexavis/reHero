@@ -7,7 +7,7 @@
                 <div class="well">
                     <h1>Insert HomeWork</h1>
                     <p>&nbsp;</p>
-                    <asp:Calendar class="col-centered" ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
+                    <asp:Calendar class="col-centered" ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" SelectedDate="<%# DateTime.Now %>"></asp:Calendar>
                     <asp:Label runat="server" ID="testDate"></asp:Label>
                     <asp:FormView runat="server"
                         ItemType="HeroHWTracker.Models.HomeWork" DefaultMode="Insert"

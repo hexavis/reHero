@@ -130,7 +130,7 @@
                             <asp:LinkButton ID="LinkButton1" runat="server"></asp:LinkButton>
                             <div>
 
-                                <asp:Panel ID="Panel1" runat="server" class="modalPopup" Width="400px" Height="475px">
+                                <asp:Panel ID="Panel1" runat="server" class="modalPopup" style='display:none' Width="400px" Height="475px">
                                     <div align="center">
                                         <p>
                                             <asp:Label ID="showLevelUp" runat="server"></asp:Label>

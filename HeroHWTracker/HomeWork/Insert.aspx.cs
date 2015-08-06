@@ -24,11 +24,17 @@ namespace HeroHWTracker.HomeWork
             if (!HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 Response.Redirect("~/login.aspx");
+                BindCalendar();
             }
             else
             {
 
             }
+        }
+
+        private void BindCalendar()
+        {
+            Calendar1.SelectedDate = DateTime.Now;
         }
 
         // This is the Insert method to insert the entered HomeWork item
