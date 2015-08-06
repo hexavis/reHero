@@ -172,7 +172,7 @@
 
                             <!-- You got Exp well -->
                             <asp:PlaceHolder ID="ExpWell" runat="server">
-                                <div class="well">
+                                <div class="well well-lg">
                                     <div class="col-md-11">
                                         <asp:Label runat="server" ID="showExp"></asp:Label>
                                     </div>
