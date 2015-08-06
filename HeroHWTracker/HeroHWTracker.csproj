@@ -170,6 +170,7 @@
     <Content Include="img\j0Bee17.jpg" />
     <Content Include="img\levelup.png" />
     <Content Include="img\notebook.png" />
+    <Content Include="img\notebook2.png" />
     <Content Include="img\small_steps.png" />
     <Content Include="img\small_stepsB.png" />
     <Content Include="packages.config" />

@@ -31,7 +31,7 @@
     </asp:ContentPlaceHolder>
 </head>
 
-<body id="Body1" style="background: url(<%=ResolveClientUrl("~/img/notebook.png")%>); background-repeat: repeat;">
+<body id="Body1" style="background: url(<%=ResolveClientUrl("~/img/notebook2.png")%>); background-repeat: repeat;">
     <div class="container-fluid">
         <form id="form1" runat="server">
             <div>

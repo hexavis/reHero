@@ -4,10 +4,10 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="body">
         <div class="container-fluid">
-            <div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 main">
+            <div class="col-lg-12 text-center">
                 <h2>HomeWork List</h2>
                 <p>&nbsp;</p>
-                <div id="sCenter">
+                <div class="">
                     <p>
                         <asp:HyperLink CssClass="HyperButton" runat="server" NavigateUrl="Insert" Text="Create new" />
                         |   
@@ -16,7 +16,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <div>
         <div class="well">
             <asp:ListView ID="ListView1" runat="server"

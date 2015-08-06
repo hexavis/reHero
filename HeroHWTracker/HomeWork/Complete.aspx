@@ -4,12 +4,14 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="body">
         <div class="container-fluid">
-            <div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 main">
+
+            <div class="col-lg-12 text-center">
                 <h2>HomeWork List</h2>
                 <p>&nbsp;</p>
                 <p>
                     <asp:Button runat="server" ID="InProgressB" Text="In Progress List" OnClick="CompleteB_Click" />
                 </p>
+            </div>
             </div>
         </div>
         <div>
@@ -73,7 +75,7 @@
                                             <p>Description: <span class="description"><%# Eval("Description")%></span></p>
 
                                             <p>Due Date: <span class="date"><%# Eval("Due_Date", "{0:MM/dd/yyyy}")%></span></p>
-                                            <a class="GlyphButton" href="<%# FriendlyUrl.Href("~/HomeWork/Delete", Item.HomeWorkID) %>"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                            <a class="GlyphButton" href="<%# FriendlyUrl.Href("~/HomeWork/Delete", Item.HomeWorkID) %>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                         </div>
                                     </td>
                                 </tr>

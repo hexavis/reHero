@@ -3,11 +3,10 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <asp:Panel id="reqId" runat="server" HorizontalAlign="center" >
     <div class="containter-fluid">
-        <div class="col-md-6 col-md-offset-3 col-centered">
+        <div class="col-md-6 col-md-offset-3 text-center">
             <div class="well">
                 <h1>Edit HomeWork</h1>
                 <p>&nbsp;</p>
-                
                 <asp:Calendar class="col-centered" ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
                 <asp:Label class="col-centered" runat="server" ID="testDate"></asp:Label>
                 <asp:FormView class="sCenter" runat="server"
@@ -19,7 +18,7 @@
                     </EmptyDataTemplate>
                     <EditItemTemplate>
                         <fieldset class="form-horizontal">
-                            <div id="sCenter">
+                                <div class="col-sm-offset-1 col-sm-10">
                             <legend></legend>
                             <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
                             <asp:DynamicControl Mode="Edit" DataField="UserInfoID" runat="server" Visible="False" />

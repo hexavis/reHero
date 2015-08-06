@@ -97,6 +97,8 @@ h2{
 
 
 
-.sCenter{
-    align-content:center;
+.sCenter {
+    position: fixed;
+    left: 50%;
 }
+    

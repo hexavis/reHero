@@ -3,8 +3,8 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <asp:Panel ID="reqId" runat="server" HorizontalAlign="center">
         <div class="containter-fluid">
-            <div class="col-md-6 col-md-offset-3 col-centered">
-                <div class="well">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <div class="well col-lg-12 text-center">
                     <h2>Are you sure want to delete this HomeWork?</h2>
                     <p>&nbsp;</p>
                     <asp:FormView runat="server"
@@ -12,36 +12,38 @@
                         DeleteMethod="DeleteItem" SelectMethod="GetItem"
                         OnItemCommand="ItemCommand" RenderOuterTable="false">
                         <EmptyDataTemplate>
-                            Cannot find the HomeWork with HomeWorkID <%: Request.QueryString["HomeWorkID"] %>
+                            Cannot find the HomeWork you are looking for.
                         </EmptyDataTemplate>
                         <ItemTemplate>
+                            
                             <fieldset class="form-horizontal">
                                 <legend></legend>
                                 <div class="row">
-                                    <div class="col-sm-offset-2 col-sm-4">
+                                    <div class="col-sm-12 text-center">
                                        <asp:Image ID='Image1' runat='server' ImageUrl='<%#"~/"+Eval("MonFilePath") %>' />
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-offset-2 col-sm-4">
+                                   <div class="col-sm-12 text-center">
                                         <h1><asp:DynamicControl runat="server" DataField="Name" ID="Name" Mode="ReadOnly" /></h1>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-offset-2 col-sm-4">
+                                    <div class="col-sm-12 text-center">
                                         <asp:DynamicControl runat="server" DataField="Description" ID="Description" Mode="ReadOnly" />
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-offset-2 col-sm-4">
+                                    <div class="col-sm-12 text-center">
                                         <asp:DynamicControl runat="server" DataField="Class" ID="Class" Mode="ReadOnly" />
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-offset-2 col-sm-4">
-                                        <asp:DynamicControl runat="server" DataField="Due_Date" ID="Due_Date" Mode="ReadOnly" />
+                                    <div class="col-sm-12 text-center">
+                                       <span class="date"><%# Eval("Due_Date", "{0:MM/dd/yyyy}")%></span>
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     &nbsp;
                                 </div>
