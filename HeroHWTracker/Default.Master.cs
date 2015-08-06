@@ -114,6 +114,8 @@ namespace HeroHWTracker
                         {
                             //tell them they leveled up ==============================================
                             currLevel += 1;
+                            //Set level above exp bar
+                            userLevel.Text = currLevel.ToString();
 
                             //subtract 
                             currExp = currExp - expNeeded;
@@ -135,8 +137,7 @@ namespace HeroHWTracker
                             }
 
                             ModalPopupExtender1.Show();
-                            int levelUp = currLevel - 1;
-                            showLevelUp.Text = "Congratulations! You are now level " + levelUp + "!";
+                            showLevelUp.Text = "Congratulations! You are now level " + currLevel + "!";
                         }
 
 
