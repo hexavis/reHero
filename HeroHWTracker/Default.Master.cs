@@ -135,7 +135,8 @@ namespace HeroHWTracker
                             }
 
                             ModalPopupExtender1.Show();
-                            showLevelUp.Text = "Congratulations! You are now level " + currLevel-1 +"!";
+                            int levelUp = currLevel - 1;
+                            showLevelUp.Text = "Congratulations! You are now level " + levelUp + "!";
                         }
 
 
