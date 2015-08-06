@@ -79,6 +79,9 @@ namespace HeroHWTracker
                         conn.Close();
                     }
 
+                    //Set level above exp bar
+                    userLevel.Text = currLevel.ToString();
+
                     //grab the experience needed for current level for level up check
                     SqlCommand grabExp = new SqlCommand("SELECT * FROM [EXP] where [Level]=@level", conn);
                     grabExp.Parameters.AddWithValue("@level", currLevel + 1);

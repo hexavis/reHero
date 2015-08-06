@@ -51,7 +51,7 @@
                             <!-- links -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <!-- <li><a href="/">Home</a></li> -->
+                                    <li><a href="/Default.aspx">Home</a></li> 
 
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
@@ -82,7 +82,7 @@
                             <!-- links -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <!--<li><a href="/">Home</a></li>-->
+                                    <li><a href="../HomeWork/Default.aspx">Home</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="navbar-text">
@@ -108,6 +108,7 @@
                                         <asp:Image class="media-object" ID="Hero" runat="server" Width="100" />
                                     </div>
                                     <div class="media-body media-middle">
+                                        <h1>Level <asp:Label runat="server" ID="userLevel"></asp:Label></h1>
                                         <!-- The experience bar -->
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-warning" role="progressbar"

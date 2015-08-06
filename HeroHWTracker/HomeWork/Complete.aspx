@@ -19,7 +19,7 @@
                     ItemType="HeroHWTracker.Models.HomeWork"
                     SelectMethod="Index">
                     <EmptyDataTemplate>
-                        There are no entries found for HomeWork
+                        It appears you have not completed any homework yet.
                     </EmptyDataTemplate>
                     <LayoutTemplate>
                         <asp:Panel ID="panel1" runat="server" ScrollBars="Auto">
@@ -72,7 +72,7 @@
                                             <p>Class: <span class="class"><%# Eval("Class")%></span></p>
                                             <p>Description: <span class="description"><%# Eval("Description")%></span></p>
 
-                                            <p>Due Date: <span class="date"><%# Eval("Due_Date")%></span></p>
+                                            <p>Due Date: <span class="date"><%# Eval("Due_Date", "{0:MM/dd/yy}")%></span></p>
                                             <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/HomeWork/Delete", Item.HomeWorkID) %>' Text="Delete" />
                                         </div>
                                     </td>

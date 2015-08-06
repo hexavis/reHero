@@ -10,7 +10,7 @@
                 
                 <asp:Calendar class="col-centered" ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
                 <asp:Label class="col-centered" runat="server" ID="testDate"></asp:Label>
-                <asp:FormView class="col-centered" runat="server"
+                <asp:FormView class="sCenter" runat="server"
                     ItemType="HeroHWTracker.Models.HomeWork" DefaultMode="Edit" DataKeyNames="HomeWorkID"
                     UpdateMethod="UpdateItem" SelectMethod="GetItem"
                     OnItemCommand="ItemCommand" RenderOuterTable="false">
@@ -19,7 +19,7 @@
                     </EmptyDataTemplate>
                     <EditItemTemplate>
                         <fieldset class="form-horizontal">
-                             <div class="col-sm-12">
+                            <div id="sCenter">
                             <legend></legend>
                             <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
                             <asp:DynamicControl Mode="Edit" DataField="UserInfoID" runat="server" Visible="False" />
