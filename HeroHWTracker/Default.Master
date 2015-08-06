@@ -178,7 +178,6 @@
                                     <div class="col-md-1">
                                         <asp:Button runat="server" ID="wellB" OnClick="wellB_Click" Text="X" />
                                     </div>
-                                    <p>&nbsp;</p>
                                 </div>
                             </asp:PlaceHolder>
                         </div>

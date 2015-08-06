@@ -138,7 +138,23 @@ namespace HeroHWTracker
 
                         //show well and exp you gained
                         ExpWell.Visible = true;
-                        showExp.Text = "You have gained " + HomeWork.Insert.ADD_HW_Exp.ToString() + " experience~!";
+                        if (HomeWork.Insert.gotExpIn == true)
+                        {
+                            showExp.Text = "You have gained " + HomeWork.Insert.ADD_HW_Exp.ToString() + " experience~!";
+                        }
+                        else
+                        {
+                            if (HomeWork.Finish.gotEarlyExp == true)
+                            {
+                                showExp.Text = "You have gained " + HomeWork.Finish.ADD_COM_EXP_EARLY.ToString() + " experience~!";
+                                HomeWork.Finish.gotEarlyExp = false;
+                            }
+                            else
+                            {
+                                showExp.Text = "You have gained " + HomeWork.Finish.ADD_COM_EXP.ToString() + " experience~!";
+                            }
+                        }
+                        
                         HomeWork.Insert.gotExpIn = false;
                         HomeWork.Finish.gotExpCom = false;
 

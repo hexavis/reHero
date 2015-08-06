@@ -17,7 +17,7 @@ namespace HeroHWTracker.HomeWork
     public partial class Finish : System.Web.UI.Page
     {
 		protected HeroHWTracker.Models.HeroEntities _db = new HeroHWTracker.Models.HeroEntities();
-        public static Boolean gotExpCom = false;
+        public static Boolean gotExpCom = false, gotEarlyExp = false;
         public const int ADD_COM_EXP = 45, ADD_COM_EXP_EARLY = 55;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -110,8 +110,17 @@ namespace HeroHWTracker.HomeWork
                 }
 
                 int newExp = 0;
-               
-                newExp = currExp + ADD_COM_EXP;
+
+                if (item.Due_Date > DateTime.Now)
+                {
+                    newExp = currExp + ADD_COM_EXP_EARLY;
+                    gotEarlyExp = true;
+                }
+                else
+                {
+                    newExp = currExp + ADD_COM_EXP;
+                }
+                
                
                    
                 SqlCommand update2 = new SqlCommand("UPDATE [UserInfo] SET [currExp]=@currExp WHERE [username]=@name", conn);
