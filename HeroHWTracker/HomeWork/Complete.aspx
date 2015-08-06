@@ -72,8 +72,8 @@
                                             <p>Class: <span class="class"><%# Eval("Class")%></span></p>
                                             <p>Description: <span class="description"><%# Eval("Description")%></span></p>
 
-                                            <p>Due Date: <span class="date"><%# Eval("Due_Date", "{0:MM/dd/yy}")%></span></p>
-                                            <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/HomeWork/Delete", Item.HomeWorkID) %>' Text="Delete" />
+                                            <p>Due Date: <span class="date"><%# Eval("Due_Date", "{0:MM/dd/yyyy}")%></span></p>
+                                            <a class="GlyphButton" href="<%# FriendlyUrl.Href("~/HomeWork/Delete", Item.HomeWorkID) %>"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                         </div>
                                     </td>
                                 </tr>
